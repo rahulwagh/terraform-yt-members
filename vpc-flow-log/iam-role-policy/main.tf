@@ -1,5 +1,9 @@
 variable "flow_log_policy_name" {}
 
+output "flow_log_role_Arn" {
+  value = aws_iam_role.flow_log_role.arn
+}
+
 resource "aws_iam_role" "flow_log_role" {
   name               = var.flow_log_policy_name
   assume_role_policy = <<EOF
